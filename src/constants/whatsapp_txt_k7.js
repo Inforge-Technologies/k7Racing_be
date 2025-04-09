@@ -1,0 +1,36 @@
+
+module.exports = Object.freeze({
+    category: 'Select a Category',
+    footertext: 'Powered by *Inforge Technologies*',
+    filter: 'Select Filter',
+    budget: 'Select Budget',
+    variant: 'Select a Variant',
+    variantBody:'Choose the best Bike of your need!',
+    buysell: 'Select Buy or Sell',
+    chossePrd: 'Choose a Product',
+    buydesc: 'Variety of options to choose from K7 Racing',
+    selldesc:'Sell/Exchange your Bike for the best price in the Market',
+    bodyTxt:'One stop solution for Royal Enfied Bikes',
+    headerTxt:'Welcome to K7 Racing. ',
+    budgetTxt:'Lets us Pick the Bike which suits your Budget',
+    variantTxt:'Let You choose the best Bike that matches you',
+    filterTxt:'Choose the filter',
+    filterBodyTxt:'Helps you filter the best mobiles of your need',
+    budget1Desc:'Budget1',
+    budget2Desc:'Budget2',
+    budget3Desc:'Budget3',
+    mobileHeader:'Choose the Bike',
+    mobileBody:'Choose the Bike and get more details about it!',
+    noStock :'We are sorry! We dont have the particular stock as of now. We have recorder your request and will intimate you once we get the stock ',
+    model: 'Select a Model',
+    modelBody:'Choose the Excat Model!',
+    sendimages:'Please send few clear images of your Bike',
+    ThankMessage:'Thank you very much for the interest to sell Your Product with Us. We will get in touch with you shortly! \n Meantime you can visit our shop using the location below.',
+    BuyThankMessage:'Thank you very much for the interest. We will get in touch with you shortly! \n Meantime you can visit our shop using the location below.',
+    latitude : '12.940764',
+    longitude:'80.235093',
+    Shopname : 'K7 Racing',
+    address :' 3/182, Rajiv Gandhi Salai, Gandhi Nagar, OMR, Thoraipakkam, Chennai, Tamil Nadu 600097'
+    
+});
+

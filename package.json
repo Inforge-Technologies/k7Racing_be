@@ -1,0 +1,38 @@
+{
+  "name": "market_place_server",
+  "version": "1.0.0",
+  "description": "market_place",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Inforge",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.2.0",
+    "follow-redirects": "^1.15.5",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
+    "node-localstorage": "^3.0.5",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5",
+    "sharp": "^0.33.5",
+    "socket.io": "^4.7.4",
+    "whatsappcloudapi_wrapper": "^1.0.13"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.13.0",
+    "typescript": "^5.3.3"
+  }
+}

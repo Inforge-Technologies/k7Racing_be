@@ -1,0 +1,50 @@
+const app = require("express").Router();
+
+const categoriesRouter = require("./src/routers/mst_categories.router");
+const subCategoriesRouter = require("./src/routers/trn_subcategories.router");
+const productRouter = require("./src/routers/trn_product.router.js");
+const brandRouter = require("./src/routers/mst_brand.router");
+const productColumnRouter = require("./src/routers/mst_product_columns.router");
+const customFieldsRouter = require("./src/routers/mst_custom_fields.router");
+const productFieldsRouter = require("./src/routers/mst_product_fields.router");
+const productImagesRouter = require("./src/routers/mst_product_images.router");
+const modelRouter = require("./src/routers/mst_model.router");
+const userReqRouter = require("./src/routers/trn_user_req.router");
+const loginRouter = require("./src/routers/trn_login.router.js");
+const soldDetailsRouter = require("./src/routers/trn_sold_details.router.js");
+const reqProductImgsRouter = require("./src/routers/trn_user_req_images.router.js");
+const reqProductFieldsRouter = require("./src/routers/trn_user_req_fields.router.js"); 
+const reqProductColumnsRouter = require("./src/routers/mst_user_req_columns.router.js"); 
+const userFavouritesRouter = require("./src/routers/trn_user_favourites.router.js");
+const reservedDetailsRouter = require("./src/routers/trn_reserved_details.router.js");
+const whatsappUserRouter = require("./src/routers/trn_wa_user.router.js");
+const offerRouter = require("./src/routers/trn_offer.router.js");
+const fcmTokenRouter = require("./src/routers/mst_fcm_token.router.js");
+const productAlertRouter = require("./src/routers/trn_product_alert.router.js");
+const colorRouter = require("./src/routers/mst_colors.router.js");
+
+
+app.use("/categories", categoriesRouter);
+app.use("/subCategories", subCategoriesRouter);
+app.use("/product", productRouter);
+app.use("/brand", brandRouter);
+app.use("/productColumns", productColumnRouter);
+app.use("/customFields", customFieldsRouter);
+app.use("/productFields", productFieldsRouter);
+app.use("/productImages", productImagesRouter);
+app.use("/model", modelRouter);
+app.use("/userreq", userReqRouter);
+app.use("/login", loginRouter);
+app.use("/soldDetails", soldDetailsRouter);
+app.use("/reqProductImgs", reqProductImgsRouter);
+app.use("/reqProductFields", reqProductFieldsRouter);
+app.use("/reqProductColumns", reqProductColumnsRouter);
+app.use("/userFavourites", userFavouritesRouter);
+app.use("/reservedDetails", reservedDetailsRouter);
+app.use("/whatsappUser", whatsappUserRouter);
+app.use("/offer", offerRouter);
+app.use("/fcmToken", fcmTokenRouter);
+app.use("/productAlert", productAlertRouter);
+app.use("/color",colorRouter);
+
+module.exports = app;
