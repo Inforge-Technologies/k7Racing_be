@@ -1,4 +1,5 @@
 const config = require("./config");
+const fs = require("fs");
 const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize(
@@ -9,6 +10,14 @@ const sequelize = new Sequelize(
     host: config.database.host,
     dialect: "postgres",
     port: config.database.port,
+    // Dont remove these lines. needed for production release
+  //    ssl: {
+	//  rejectUnauthorized: false,
+  //  	 ca: fs.readFileSync('/etc/ssl/certs/api/certificate.crt').toString(),
+	// key:  fs.readFileSync('/etc/ssl/certs/api/private.key').toString(),
+	// cert:   fs.readFileSync('/etc/ssl/certs/api/certificate.crt').toString(),
+  //    },
+
     pool: {
       max: config.pool.max,
       min: config.pool.min,
@@ -36,6 +45,9 @@ sequelize
   })
   .catch((err) => {
     console.log("Database Not synchronized successfully.");
+
+  console.log(err.message);
+ 
   });
 
 const db = {};
