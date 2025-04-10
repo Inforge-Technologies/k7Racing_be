@@ -79,7 +79,6 @@ exports.saveUser = async (userData) => {
   }
 };
 
-
 exports.findUserPwd = async (userData) => {
   try {
     const userLoginData = await db.Login.findOne({
@@ -115,3 +114,37 @@ exports.findUserPwd = async (userData) => {
     throw new Error(error.message);
   }
 };
+
+exports.sendOTPToNewUser = async (loginData) => {
+  let phoneNumber = loginData.mobileNo;
+
+  if (!phoneNumber.startsWith("91")) {
+    phoneNumber = "91" + phoneNumber;
+  }
+
+  const randomNo = Math.floor(1000 + Math.random() * 9000);
+  const messageTemplate = `Your OTP Verification code is ${randomNo} Do not share it with anyone.Thalapathy Vijay Makkal Iyakkam-VMIOTP`;
+
+  try {
+    const { default: fetch } = await import("node-fetch");
+
+    const response = await fetch(
+      `http://site.ping4sms.com/api/smsapi?key=88e611e79a1274508006c35f8048e19a&route=2&sender=VMIOTP&number=Number(${ phoneNumber})&sms=${messageTemplate}&templateid=1007164811640781357`, {
+           method: "POST"
+       });
+
+    const responseText = await response.text();
+    console.log("SMS API response:", responseText);
+
+    if (!response.ok) {
+      throw new Error(`SMS API error: ${response.statusText}`);
+    }
+
+    return randomNo;
+  } catch (error) {
+    console.error("Error sending OTP:", error);
+    throw error;
+  }
+};
+
+

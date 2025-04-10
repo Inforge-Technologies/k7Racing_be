@@ -6,4 +6,6 @@ router.post("/saveNewUser", loginController.saveNewUser);
 
 router.post("/userLogin", loginController.userLogin);
 
+router.post("/checkNewUser", loginController.checkNewUser);
+
 module.exports = router;
