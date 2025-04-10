@@ -22,8 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
         },
         target_limit: {
-            type: DataTypes.FLOAT,
-            allowNull: true,
+            type: DataTypes.INTEGER,
         },
         isDelete: {
             type: DataTypes.BOOLEAN,

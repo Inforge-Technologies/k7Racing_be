@@ -535,7 +535,7 @@ exports.getAllProducts = async (title, user_id, priceFilter, role, newestFilter,
         if (startPrice && startPrice !== "undefined" && endPrice && endPrice !== "undefined" && !(startPrice == 0 && endPrice == 0)) {
             if (startPrice == endPrice) {
                 // Special handling for exact price match
-                if (startPrice == 25000) {
+                if (startPrice == 200000) {
                     condition = {
                         ...condition,
                         [priceField]: {
@@ -718,7 +718,7 @@ exports.filterProductsList = async (data) => {
 
             whereCondition[priceField] =
                 startValue === endValue
-                    ? startValue === 25000
+                    ? startValue === 200000
                         ? { [Op.gte]: startValue }
                         : startValue
                     : { [Op.gte]: startValue, [Op.lte]: endValue };
