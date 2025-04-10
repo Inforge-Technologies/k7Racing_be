@@ -23,3 +23,20 @@ exports.userLogin = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+exports.checkNewUser = (req, res) => {
+    const phoneNo = req.body;
+    loginService
+      .sendOTPToNewUser(phoneNo)
+      .then((otp) => {
+        return res.send({
+          status: "success",
+          message: "OTP is sent to your device",
+          otp: otp,
+        });
+      })
+  
+      .catch((err) => {
+        res.status(500).send({ status: "error", message: err.message });
+      });
+  };

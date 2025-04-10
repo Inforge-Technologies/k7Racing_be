@@ -53,6 +53,9 @@ module.exports = (sequelize, DataTypes) => {
         dealer_price: {
             type: DataTypes.FLOAT
         },
+        down_payment: {
+            type: DataTypes.FLOAT
+        },
         tax: {
             type: DataTypes.INTEGER
         },

@@ -69,6 +69,7 @@ exports.saveProduct = async (productData, fieldData, files, id) => {
                     youtube_link: productData.youtube_link,
                     fb_link: productData.fb_link,
                     insta_link: productData.insta_link,
+                    down_payment: productData.down_payment,
                     ...(rcImagePath && { rcimage: rcImagePath }),
                     ...(coverImagePath && { cover_image: coverImagePath })
                 },
@@ -99,6 +100,7 @@ exports.saveProduct = async (productData, fieldData, files, id) => {
                     youtube_link: productData.youtube_link,
                     fb_link: productData.fb_link,
                     insta_link: productData.insta_link,
+                    down_payment: productData.down_payment,
                     rcimage: rcImagePath,
                     cover_image: coverImagePath,
                 },
