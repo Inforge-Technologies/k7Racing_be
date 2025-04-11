@@ -150,7 +150,7 @@ exports.saveProduct = async (productData, fieldData, files, id) => {
         }
 
         await transaction.commit();
-        return product;
+        return product.id;
     } catch (error) {
         await transaction.rollback();
         throw new Error("Failed to create product: " + error.message);

@@ -37,7 +37,7 @@ exports.getAllLikedProducts = async (user_id) => {
             include: [
                 {
                     model: db.Products,
-                    as: "mst_product",
+                    as: "trn_product",
                     attributes: {
                         exclude: ["createdAt", "updatedAt", "isDelete"], // Exclude unnecessary fields from Products
                     },
