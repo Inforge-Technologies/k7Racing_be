@@ -11,12 +11,12 @@ const sequelize = new Sequelize(
     dialect: "postgres",
     port: config.database.port,
     // Dont remove these lines. needed for production release
-  //    ssl: {
-	//  rejectUnauthorized: false,
-  //  	 ca: fs.readFileSync('/etc/ssl/certs/api/certificate.crt').toString(),
-	// key:  fs.readFileSync('/etc/ssl/certs/api/private.key').toString(),
-	// cert:   fs.readFileSync('/etc/ssl/certs/api/certificate.crt').toString(),
-  //    },
+     ssl: {
+	 rejectUnauthorized: false,
+   	 ca: fs.readFileSync('/etc/ssl/certs/api/certificate.crt').toString(),
+	key:  fs.readFileSync('/etc/ssl/certs/api/private.key').toString(),
+	cert:   fs.readFileSync('/etc/ssl/certs/api/certificate.crt').toString(),
+     },
 
     pool: {
       max: config.pool.max,
@@ -33,15 +33,15 @@ const sequelize = new Sequelize(
 sequelize
   .authenticate()
   .then(() => {
-    // console.log("Database synchronized successfully.");
-    // sequelize
-    //   .sync({ alter: true })
-    //   .then(() => {
-    //     console.log("Database synchronized successfully.");
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error synchronizing database:", error);
-    //   });
+    console.log("Database synchronized successfully.");
+    sequelize
+      .sync({ alter: true })
+      .then(() => {
+        console.log("Database synchronized successfully.");
+      })
+      .catch((error) => {
+        console.error("Error synchronizing database:", error);
+      });
   })
   .catch((err) => {
     console.log("Database Not synchronized successfully.");
