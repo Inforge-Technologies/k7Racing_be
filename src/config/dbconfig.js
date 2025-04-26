@@ -33,15 +33,15 @@ const sequelize = new Sequelize(
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Database synchronized successfully.");
-    sequelize
-      .sync({ alter: true })
-      .then(() => {
-        console.log("Database synchronized successfully.");
-      })
-      .catch((error) => {
-        console.error("Error synchronizing database:", error);
-      });
+    // console.log("Database synchronized successfully.");
+    // sequelize
+    //   .sync({ alter: true })
+    //   .then(() => {
+    //     console.log("Database synchronized successfully.");
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error synchronizing database:", error);
+    //   });
   })
   .catch((err) => {
     console.log("Database Not synchronized successfully.");
@@ -77,6 +77,7 @@ db.Offer = require("../models/trn_offer.model")(sequelize, DataTypes);
 db.FcmToken = require("../models/mst_fcm_token.model")(sequelize, DataTypes);
 db.ProductAlert = require("../models/trn_product_alert.model")(sequelize, DataTypes);
 db.Color = require("../models/mst_colors.model")(sequelize, DataTypes);
+db.AdjustmentOffer = require("../models/trn_adjustment_offer.model")(sequelize, DataTypes);
 
 // Product association
 db.Categories.hasMany(db.Products, { foreignKey: "category_id" });
@@ -200,5 +201,12 @@ db.ProductAlert.belongsTo(db.Model, { foreignKey: "model_id" });
 
 db.Login.hasMany(db.ProductAlert, { foreignKey: "login_id" });
 db.ProductAlert.belongsTo(db.Login, { foreignKey: "login_id" });
+
+// adjustment offer association
+db.Products.hasMany(db.AdjustmentOffer, { foreignKey: "prd_id" });
+db.AdjustmentOffer.belongsTo(db.Products, { foreignKey: "prd_id" });
+
+db.Login.hasMany(db.AdjustmentOffer, { foreignKey: "user_id" });
+db.AdjustmentOffer.belongsTo(db.Login, { foreignKey: "user_id" });
 
 module.exports = db;

@@ -22,6 +22,7 @@ const offerRouter = require("./src/routers/trn_offer.router.js");
 const fcmTokenRouter = require("./src/routers/mst_fcm_token.router.js");
 const productAlertRouter = require("./src/routers/trn_product_alert.router.js");
 const colorRouter = require("./src/routers/mst_colors.router.js");
+const adjustmentOfferRouter = require("./src/routers/trn_adjustment_offer.router.js");
 
 
 app.use("/categories", categoriesRouter);
@@ -46,5 +47,6 @@ app.use("/offer", offerRouter);
 app.use("/fcmToken", fcmTokenRouter);
 app.use("/productAlert", productAlertRouter);
 app.use("/color",colorRouter);
+app.use("/adjustmentOffer", adjustmentOfferRouter);
 
 module.exports = app;
