@@ -7,20 +7,22 @@ exports.saveAdjustmentOffer = async (offerData) => {
     });
 
     if (existingAdjustmentOfferDetails) {
-      await db.AdjustmentOffer.update(offerData, {
+       await db.AdjustmentOffer.update(offerData, {
         where: { prd_id: offerData.prd_id, user_id: offerData.user_id }
       });
 
       return {
         status: "Success",
-        message: "Adjustment offer details updated successfully."
+        message: "Adjustment offer details updated successfully.",
+        data:existingAdjustmentOfferDetails.id,
       };
     } else {
-      await db.AdjustmentOffer.create(offerData);
+      var data = await db.AdjustmentOffer.create(offerData);
 
       return {
         status: "Success",
-        message: "Adjustment offer details saved successfully."
+        message: "Adjustment offer details saved successfully.",
+        data:data.id,
       };
     }
   } catch (error) {
